@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #edf8fd;
+}
+
+/* Loader Fullscreen */
+  #loader {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at center, #222 0%, #000 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  /* Cloudy Background effect using pseudo-element */
+#loader::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('./assets/fola.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.5;
+}
+
+.star {
+    position: absolute;
+    background: rgb(255, 234, 0);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    box-shadow: 0 0 15px rgba(255, 255, 100, 0.9), 0 0 30px rgba(255, 255, 180, 0.7);
+    opacity: 0;
+    transform: translate(0, 0) scale(0.5);
+    animation: explode 1.8s ease-out forwards;
+}
+
+@keyframes explode {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0) scale(0.5);
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--x), var(--y)) scale(1.2);
+        opacity: 0;
+    }
+}
+
+
+.profile_card {
+    background: linear-gradient( #a184fe, #b9a3ec);
+    padding: 20px;
+    width: 450px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+img {
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+.job_title {
+    font-size: 1.1rem;
+    color: #1e1d1d;
+    margin-bottom: 10px;
+}
+
+.bio {
+    font-size: 0.86rem;
+    color: #0a0a0a;
+    margin-bottom: 15px;
+    line-height: 1.3rem;
+}
+
+.social-links {
+    margin: 15px 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.icons:hover {
+    scale: 1.2;
+}
+
+.email {
+    margin-top: 10%;
+    cursor: pointer;
+    font-size: .9rem;
+}
+
+.email:hover {
+    color: #2d2c2c;
+    font-size: 0.86rem;
+}
+
+.utc-time {
+    font-size: 14px;
+    color: #222;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+
+@media screen and (max-width: 450px) {
+    .profile_card {
+        padding: 22px;
+       
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    .job_title {
+        font-size: 1.6rem;
+    }
+    
+    .bio {
+        font-size: 1.27rem;
+        line-height: 1.9rem;
+        padding-top: 4%;
+    }
+
+    .email {
+        font-size: 1.3rem;
+    }
+
+    .email:hover {
+        color: #2d2c2c;
+        font-size: 0.96rem;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .profile_card {
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    .job_title {
+        font-size: 1.6rem;
+    }
+    
+    .bio {
+        padding-inline: 5px;
+    }
+
+    .email {
+        font-size: 1.3rem;
+    }
+
+    .email:hover {
+        color: #2d2c2c;
+        font-size: 0.96rem;
+    }
+}
