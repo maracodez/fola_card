@@ -139,6 +139,7 @@ h1 {
         font-size: 1.27rem;
         line-height: 1.9rem;
         padding-top: 4%;
+        padding-inline: 2%;
     }
 
     .email {
